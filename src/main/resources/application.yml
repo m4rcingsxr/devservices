@@ -1,0 +1,34 @@
+greeting:
+  message: "hello"
+quarkus:
+  http:
+  flyway:
+    migrate-at-start: true
+    locations: db/migration
+  hibernate-orm:
+    physical-naming-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategySnakeCaseImpl
+  datasource:
+    reactive:
+      url: postgresql://${DATABASE_URL}
+    jdbc:
+      url: jdbc:postgresql://${DATABASE_URL}
+    devservices:
+      enabled: true
+      image-name: postgres:17.5
+#      port: 55432
+
+#"%dev":
+#  quarkus:
+#    datasource:
+#      reactive:
+#        url: postgresql://localhost:55432/quarkus
+#      jdbc:
+#        url: jdbc:postgresql://localhost:55432/quarkus
+#
+#"%test":
+#  quarkus:
+#    datasource:
+#      reactive:
+#        url: postgresql://localhost:55432/quarkus
+#      jdbc:
+#        url: jdbc:postgresql://localhost:55432/quarkus
